@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme{
+    --color-whitits-100:#e0e7ff;
+    --color-purple-300:#6863c7;
+    --color-purple-500:#3e38a7;
+    --color-purple-600:#5046e4;
+    --font-roboto: "Roboto", sans-serif;
+
+}
+
+.twitter-tweet {
+  max-height: 400px;
+  height: 300px;
+  /* overflow-y: auto; */
+  overflow: hidden;
+  
+}
+
+/* Optional custom class */
+.roboto-header {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
