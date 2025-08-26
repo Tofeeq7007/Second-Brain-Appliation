@@ -39,9 +39,8 @@ export function Card({_id , title,link, type,description,image}:CardProps){
         if (type === "twitter" && window.twttr?.widgets) {
         window.twttr.widgets.load();
         }
-    }, [type, link]); // run when tweet link changes    
-        
-
+    }, [type, link]);
+    
     function image_to_redirect(url:string){
         window.open(url , '_blank');
     }
