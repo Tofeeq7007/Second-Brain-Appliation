@@ -36,6 +36,7 @@ export const PopUp = ({open,onclose,contentId}:POPUP)=>{
         onSuccess:(data)=>{
             queryClient.invalidateQueries({queryKey:['content']});
             alert(data.message);
+            onclose(false);
         }
     })
     return <>
