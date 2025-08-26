@@ -5,7 +5,7 @@ import { YoutubeIcon } from "../../icons/YoutubeIcon";
 import '../../App.css'
 // import { deleteContent } from "../../api/user.api";
 import { PopUp } from "../Popup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export interface CardProps{
     _id:string,
     title:string,
@@ -13,6 +13,16 @@ export interface CardProps{
     type:"twitter" | "youtube" | string,
     description?:string,
     image?:string, 
+}
+
+declare global {
+  interface Window {
+    twttr?: {
+      widgets: {
+        load: (element?: HTMLElement) => void;
+      };
+    };
+  }
 }
 export function Card({_id , title,link, type,description,image}:CardProps){
     const [popOpen , setPopup] = useState(false);
@@ -25,8 +35,12 @@ export function Card({_id , title,link, type,description,image}:CardProps){
     return videoId ? `https://www.youtube.com/embed/${videoId}` : '';
   };
     const embedLink = type === "youtube" ? getYouTubeEmbedLink(link) : '';
-
-    
+    useEffect(() => {
+        if (type === "twitter" && window.twttr?.widgets) {
+        window.twttr.widgets.load();
+        }
+    }, [type, link]); // run when tweet link changes    
+        
 
     function image_to_redirect(url:string){
         window.open(url , '_blank');
