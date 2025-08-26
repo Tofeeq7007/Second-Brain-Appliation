@@ -23,7 +23,7 @@ declare global {
       };
     };
   }
-}
+} // done   
 export function Card({_id , title,link, type,description,image}:CardProps){
     const [popOpen , setPopup] = useState(false);
 
