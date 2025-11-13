@@ -6,6 +6,7 @@ interface user{
     password:string
 }
 export async function SigninFunction ({username, password}:user){
+    console.log("Hi there")
     const res = await axiosInstance.post('/signin' ,{
         name:username,
         password:password
