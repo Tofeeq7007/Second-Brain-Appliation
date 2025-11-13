@@ -19,9 +19,6 @@
 //     )
 // }
 
-import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
-
 type InputProps = {
     type?: string;
     placeholder: string;
@@ -31,15 +28,12 @@ type InputProps = {
 };
 
 export function Input({ placeholder, onChange, type, ref, disabled }: InputProps) {
-    const [showPassword] = useState(false);
-    const isPasswordField = type === "password";
-    const inputType = isPasswordField && showPassword ? "text" : type || "text";
 
     return (
         <div className="relative group">
             <input
                 ref={ref}
-                type={inputType}
+                type={type}
                 placeholder={placeholder}
                 disabled={disabled}
                 onChange={onChange ? (e) => onChange(e.target.value) : () => {}}
