@@ -145,7 +145,7 @@ app.get("/api/v1/autocomplete", async (req, res) => {
 
 
 app.listen(PORT,()=>{
-    console.log("Server Running...");
+    console.log("Server Running....");
     
 })
 app.on("error", (err: any) => {
