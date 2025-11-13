@@ -60,7 +60,7 @@ export function Dashboard() {
             </div>
           </div>
           {/* <Button  size="lg" variant="secondary" text="Add Content"/> */}
-          <div>
+          <div className='sm:w-48 md:w-96'>
             {data?.content?.map((item:ContentItem)=>{
               const {_id, type , link, title,description,image}:CardProps = item;
               if(_id === searchData)

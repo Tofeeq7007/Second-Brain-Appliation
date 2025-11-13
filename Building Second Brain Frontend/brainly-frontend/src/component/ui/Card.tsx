@@ -54,7 +54,7 @@ export function Card({_id , title,link, type,description,image}:CardProps){
         }
     }
     
-    return <div className="hover:cursor-pointer transition duration-300 sm:w-[400px] md:w-full">
+    return <div className="m-1 hover:cursor-pointer transition duration-300 sm:w-[400px] md:w-full">
         <PopUp open={popOpen} onclose={()=>setPopup(false)} contentId={_id} />
 
         <div key={_id} className="bg-black/30  border border-white/10 rounded-xl p-4 hover:bg-black/40 shadow-md hover:shadow-xl  h-full flex flex-col transition-all duration-300">
