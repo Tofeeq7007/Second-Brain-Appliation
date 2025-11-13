@@ -75,8 +75,7 @@ export const user_signUp = async (req:Request,res:Response)=>{
 export const user_signin = async(req:Request, res:Response)=>{
     const username = req.body.name;
     const password = req.body.password;
-    console.log("uswername: ",username)
-    console.log("password: ",password)
+
     try{
 
         const existUser = await UserModel.findOne({
