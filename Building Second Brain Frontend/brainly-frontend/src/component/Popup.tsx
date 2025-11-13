@@ -52,7 +52,7 @@ export const PopUp = ({open,onclose,contentId}:POPUP)=>{
                     <div className="">Are you Sure want to delete Permanantly ?</div>
                     <div className="flex justify-center gap-10 pt-4 items-center">
                             <Button onClick={()=>onclose(false)} variant="primary" text="No" size="md"/>
-                            <Button variant="secondary" onClick={()=>removeContent(contentId)} text="Yes" size="md"/>
+                            <Button variant="primary" onClick={()=>removeContent(contentId)} text="Yes" size="md"/>
                     </div>
                     </div>
                 </div>

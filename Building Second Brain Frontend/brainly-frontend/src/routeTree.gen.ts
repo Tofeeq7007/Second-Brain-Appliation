@@ -12,6 +12,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestPageRouteImport } from './routes/testPage'
+import { Route as ComingsoonRouteImport } from './routes/comingsoon'
 import { Route as HomeRouteImport } from './routes/Home'
 
 const SignupLazyRouteImport = createFileRoute('/signup')()
@@ -25,6 +26,11 @@ const SignupLazyRoute = SignupLazyRouteImport.update({
 const TestPageRoute = TestPageRouteImport.update({
   id: '/testPage',
   path: '/testPage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComingsoonRoute = ComingsoonRouteImport.update({
+  id: '/comingsoon',
+  path: '/comingsoon',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HomeRoute = HomeRouteImport.update({
@@ -41,12 +47,14 @@ const IndexLazyRoute = IndexLazyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/Home': typeof HomeRoute
+  '/comingsoon': typeof ComingsoonRoute
   '/testPage': typeof TestPageRoute
   '/signup': typeof SignupLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/Home': typeof HomeRoute
+  '/comingsoon': typeof ComingsoonRoute
   '/testPage': typeof TestPageRoute
   '/signup': typeof SignupLazyRoute
 }
@@ -54,20 +62,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexLazyRoute
   '/Home': typeof HomeRoute
+  '/comingsoon': typeof ComingsoonRoute
   '/testPage': typeof TestPageRoute
   '/signup': typeof SignupLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/Home' | '/testPage' | '/signup'
+  fullPaths: '/' | '/Home' | '/comingsoon' | '/testPage' | '/signup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/Home' | '/testPage' | '/signup'
-  id: '__root__' | '/' | '/Home' | '/testPage' | '/signup'
+  to: '/' | '/Home' | '/comingsoon' | '/testPage' | '/signup'
+  id: '__root__' | '/' | '/Home' | '/comingsoon' | '/testPage' | '/signup'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   HomeRoute: typeof HomeRoute
+  ComingsoonRoute: typeof ComingsoonRoute
   TestPageRoute: typeof TestPageRoute
   SignupLazyRoute: typeof SignupLazyRoute
 }
@@ -86,6 +96,13 @@ declare module '@tanstack/react-router' {
       path: '/testPage'
       fullPath: '/testPage'
       preLoaderRoute: typeof TestPageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comingsoon': {
+      id: '/comingsoon'
+      path: '/comingsoon'
+      fullPath: '/comingsoon'
+      preLoaderRoute: typeof ComingsoonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/Home': {
@@ -108,6 +125,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   HomeRoute: HomeRoute,
+  ComingsoonRoute: ComingsoonRoute,
   TestPageRoute: TestPageRoute,
   SignupLazyRoute: SignupLazyRoute,
 }

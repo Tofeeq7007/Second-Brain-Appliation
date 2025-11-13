@@ -105,6 +105,7 @@ app.get("/api/v1/brain/:shareLink", async (req,res)=>{
         return;
     }
 
+
     res.json({
         username:user.name,
         content:content
@@ -118,7 +119,8 @@ app.get("/api/v1/autocomplete", async (req, res) => {
     if (!query) {
       return res.status(400).json({ error: "Query parameter 'q' is required." });
     }
-
+    
+    console.log("query : ",query);
     const results = await ContentModel.aggregate([ // assuming your model is named Content
       {
         $search: {
@@ -132,7 +134,7 @@ app.get("/api/v1/autocomplete", async (req, res) => {
       },
       { $limit: 5 },
     ]);
-
+    console.log("Query Results :", results);
     res.json(results);
   } catch (err) {
     console.error("Autocomplete error:", err);

@@ -46,12 +46,15 @@ export function Dashboard() {
   return (
       <div>
         <Sidebar setType={setType}/>
-        <div className={`p-4   ${popmsg ? "ml-16" : "ml-72"} min-h-screen bg-gray-100 border-gray-300 border-2 `}>
+        <div className={`p-4   ${popmsg ? "ml-16" : "ml-72"} min-h-screen  bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500`}>
           <CreateContentModal/>       
 
-          <div className='flex justify-between items-center flex-wrap'>
-            <div className='text-2xl font-bold font-roboto'>All Notes</div>
-            <div className='flex gap-10'>
+          <div className='md:flex flex-wrap justify-evenly items-start gap-6  p-2 border-b border-gray-400 '>
+                <div>
+                  <h1 className="text-3xl font-bold text-gray-900">Your Brain</h1>
+                  <p className="text-black-500 mt-1 text-sm">Organize and discover your knowledge</p>
+                </div>
+            <div className='flex flex-wrap-reverse gap-4 md:gap-10'>
                   <SearchBox setSearchValue={setSearchData} />
               <Top_left_Corner/>
             </div>
@@ -79,7 +82,9 @@ export function Dashboard() {
           <h1 className="text-2xl font-semibold">No Data Found!</h1>
         </div>
       )}
-          <div className={`grid  ${popmsg ? 'grid-cols-4' : 'grid-cols-3'} gap-10 mt-7`}>
+          <div   className={`grid gap-10 mt-7 
+    ${popmsg ? 'grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}
+  `}>
 
             {data?.content?.map((item:ContentItem)=>{
               const {_id, type , link, title,description,image}:CardProps = item;
@@ -119,3 +124,5 @@ export function Dashboard() {
 }
 
 export default Dashboard
+
+
