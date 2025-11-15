@@ -37,7 +37,7 @@ export function Input({ placeholder, onChange, type, ref, disabled }: InputProps
                 placeholder={placeholder}
                 disabled={disabled}
                 onChange={onChange ? (e) => onChange(e.target.value) : () => {}}
-                className="w-full px-4 py-3 bg-white/5 border text-white border-gray-300 rounded-lg  placeholder-white/40 focus:outline-none  focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 bg-white/5 border text-black border-gray-300 rounded-lg  placeholder-white/40 focus:outline-none  focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             />
             
             {/* {isPasswordField && (
