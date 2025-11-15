@@ -4,7 +4,7 @@ import { SidebarItem } from "./SidebarItem";
 import { useDispatch, useSelector } from "react-redux";
 import { revert } from "../../store/features/pop_up";
 import type { POP_UP_Button } from "../../store/store";
-import { ChevronLeft, ChevronRight, Link, LogOut, Youtube } from "lucide-react";
+import { ChevronLeft, ChevronRight, Link, LogOut, Youtube, YoutubeIcon } from "lucide-react";
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
@@ -44,12 +44,12 @@ export function Sidebar({ setType }: SidebarProps) {
             }
         }, [screenSize]);
 
-
+// bg-gradient-to-b from-blue-600 via-blue-100 to-gray-300
     return (
-        <div className={`h-screen  flex justify-between flex-col bg-gradient-to-b from-blue-600 via-blue-100 to-gray-300 fixed top-0 left-0 transition-all duration-300  ease-in-out shadow-xl border-r border-gray-200  ${open ? 'w-20' : 'w-72'}`}>
+        <div className={`h-screen max-sm:w-17  flex justify-between flex-col bg-gradient-to-b from-gray-900 via-gray-600 to-gray-900 fixed top-0 left-0 transition-all duration-300  ease-in-out shadow-xl border-r border-gray-200  ${open ? 'w-20' : 'w-72'}`}>
             
 
-            <div className="flex flex-col justify-between">
+            <div className="flex  flex-col justify-between">
 
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-200">
@@ -60,7 +60,7 @@ export function Sidebar({ setType }: SidebarProps) {
                                 dispatch(revert())
                             }
                         }}
-                        className="p-2 hover:bg-gray-100 rounded-lg transition flex-shrink-0"
+                        className="p-2  rounded-lg transition flex-shrink-0"
                         title={open ? "Expand" : "Collapse"}
                     >
                         <img 
@@ -71,7 +71,7 @@ export function Sidebar({ setType }: SidebarProps) {
                     </button>
                     
                     {!open && (
-                        <div className="font-bold text-xl text-gray-800 truncate">
+                        <div className="font-bold text-xl text-gray-200 truncate">
                             Brainly
                         </div>
                     )}
@@ -86,7 +86,7 @@ export function Sidebar({ setType }: SidebarProps) {
                     className="p-1 hover:bg-gray-200 rounded transition ml-auto flex-shrink-0"
                 >
                     {open ? (
-                        <ChevronRight size={18} className="text-black-600" />
+                        <ChevronRight size={18} className="text-black-600 max-sm:hidden" />
                     ) : (
                         <ChevronLeft size={18} className="text-black-600" />
                     )}
@@ -123,7 +123,7 @@ export function Sidebar({ setType }: SidebarProps) {
                 >
                     <SidebarItem 
                         text={open ? "" : "Youtube"}  
-                        icon={<Youtube size="35" />}
+                        icon={<YoutubeIcon  size="35" />}
                     />
                 </div>
                 <div 
@@ -147,12 +147,12 @@ export function Sidebar({ setType }: SidebarProps) {
                     }}
                     title="Log out"
                 >
-                    <div className="flex text-black-600 transition-all bg-red-500 duration-100 rounded hover:bg-red-900  items-center mx-1">
+                    <div className="flex text-black-600 transition-all ring-2 ring-red-500 mb-3 bg-red-800/40 duration-100 rounded hover:bg-red-900  items-center mx-3">
                         <div className="p-2 ml-0 max-w-48 ">
 
-                            <LogOut size="30" />
+                            <LogOut className="text-red-200" size="30" />
                         </div>
-                        {!open && <div className="p-2  text-md font-roboto font-bold ">Log out</div>}
+                        {!open && <div className="p-2  text-md text-red-200 font-roboto font-bold ">Log out</div>}
 
                     </div>                    
                 </div>

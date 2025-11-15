@@ -8,9 +8,9 @@ import { useNavigate } from "@tanstack/react-router"
 export const Top_left_Corner = ()=>{
     const dispatch = useDispatch()
     const navigate = useNavigate();
-    return <div className=" flex gap-4 max-md:flex-col">
+    return <div className=" flex gap-4  max-md:flex-col">
         
           <Button onClick={()=>{navigate({to:'/comingsoon'})}} startIcon={<ShareIcon size="md"/>} size="sm" variant="primary" text="Share Brain"/>
-                <Button  startIcon={<PlusIcon size="lg"/>} onClick={()=>{dispatch(Open())}} size="md" variant="primary" text="Add Content"/>
+                <Button startIcon={<PlusIcon size="lg"/>} onClick={()=>{dispatch(Open())}} size="md" variant="primary" text="Add Content"/>
     </div>
 }

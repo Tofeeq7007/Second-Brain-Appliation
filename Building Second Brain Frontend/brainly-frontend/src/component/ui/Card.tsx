@@ -4,7 +4,7 @@ import { TwitterIcon } from "../../icons/TwitterIcon";
 import '../../App.css'
 import { PopUp } from "../Popup";
 import { useEffect, useState } from "react";
-import { Link, Youtube } from 'lucide-react';
+import { Link, TwitchIcon, Twitter, Youtube } from 'lucide-react';
 export interface CardProps{
     _id:string,
     title:string,
@@ -63,11 +63,11 @@ export function Card({_id , title,link, type,description,image}:CardProps){
             <div className="flex justify-between items-start gap-3 mb-3">
                 <div className="flex items-center gap-3 flex-1 min-w-0">
                     <div className="p-2  rounded-lg flex-shrink-0">
-                        {type=="youtube" && <Youtube size="30"/>}
-                        {type=="twitter" && <TwitterIcon size="lg"/>}
-                        {type=="link" && <Link size="20"/>}
+                        {type=="youtube" && <Youtube className="text-gray-100"  size="30"/>}
+                        {type=="twitter" && <Twitter className="text-gray-100" size="25"/>}
+                        {type=="link" && <Link className="text-gray-100" size="20"/>}
                     </div>
-                    <div className="font-bold text-lg text-black-800 truncate">
+                    <div className="font-bold text-lg text-gray-100 truncate">
                         {title}
                     </div>
                 </div>
@@ -75,14 +75,14 @@ export function Card({_id , title,link, type,description,image}:CardProps){
                 {/* Action Icons */}
                 <div className="flex items-center gap-1 flex-shrink-0 opacity-60 group-hover:opacity-100 transition duration-300">
                     <div 
-                        className="p-2 text-gray-500 hover:text-purple-600 hover:bg-purple-100 rounded-lg transition duration-300 cursor-pointer transform hover:scale-125 hover:rotate-12"
+                        className="p-2 text-gray-300 hover:text-purple-100 hover:bg-purple-600 rounded-lg transition duration-300 cursor-pointer transform hover:scale-125 hover:rotate-12"
                         onClick={()=>openSharePopup(link)}
                         title="Share"
                     >
                         <ShareIcon size="lg"/>
                     </div>
                     <div 
-                        className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-100 rounded-lg transition duration-300 cursor-pointer transform hover:scale-125 hover:-rotate-12"
+                        className="p-2 text-gray-300 hover:text-red-100 hover:bg-red-600/80 rounded-lg transition duration-300 cursor-pointer transform hover:scale-125 hover:-rotate-12"
                         onClick={()=>setPopup(true)}
                         title="Delete"
                     >
@@ -93,16 +93,16 @@ export function Card({_id , title,link, type,description,image}:CardProps){
             
             {/* Description */}
             {description && (
-                <div className="text-black-600 text-sm mb-3 line-clamp-2 group-hover:text-gray-700 transition">
+                <div className="text-gray-300 text-sm mb-3 line-clamp-2 group-hover:text-gray-700 transition">
                     {description}
                 </div>
             )}
             
             {/* Content Area */}
-            <div className="flex-1 overflow-hidden flex items-center justify-center bg-black/30  border border-white/10  p-4 hover:bg-black/40 rounded-xl group-hover:from-purple-50 group-hover:to-gray-100 transition duration-500">
+            <div className="flex-1 overflow-hidden flex items-center justify-center bg-black/30  border border-white/10  p-2 hover:bg-black/40 rounded-xl group-hover:from-purple-50 group-hover:to-gray-100 transition duration-500">
                 {type === "youtube" && (
                     <iframe 
-                        className="rounded-xl w-full h-full shadow-sm group-hover:shadow-lg transition duration-500 transform group-hover:scale-105" 
+                        className=" w-full h-full shadow-sm group-hover:shadow-lg transition duration-500 transform group-hover:scale-105" 
                         src={embedLink} 
                         title="YouTube video player" 
                         frameBorder="0" 
@@ -120,7 +120,7 @@ export function Card({_id , title,link, type,description,image}:CardProps){
                 
                 {type != "youtube" && type != "twitter" && (
                     <img 
-                        className="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300" 
+                        className="w-full h-full object-contain  cursor-pointer hover:scale-102 transition-transform duration-300" 
                         onClick={()=>image_to_redirect(link)}  
                         src={image} 
                         alt="Preview not present" 

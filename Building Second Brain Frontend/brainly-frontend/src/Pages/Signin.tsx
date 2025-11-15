@@ -138,7 +138,7 @@ export function Signin(){
     }
 
     return (
-        <div className="min-h-screen w-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex flex-col justify-center items-center p-4">
+        <div className="min-h-screen w-ful bg-gray-950 flex flex-col justify-center items-center p-4">
             <div className="mb-12 text-center">
                 <div className="mb-4 flex justify-center">
                     <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">

@@ -44,15 +44,15 @@ export function Dashboard() {
       
     
   return (
-      <div>
+      <div className='bg-gradient-to-b  from-gray-900 via-gray-600 to-gray-900'>
         <Sidebar setType={setType}/>
-        <div className={`p-4   ${popmsg ? "ml-16" : "ml-72"} min-h-screen  bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500`}>
+        <div className={`  ${popmsg ? "ml-16" : "ml-72"} min-h-screen  `}>
           <CreateContentModal/>       
 
-          <div className='md:flex flex-wrap justify-evenly items-start gap-6  p-2 border-b border-gray-400 '>
+          <div className='md:flex flex-wrap pt-3 justify-evenly md:justify-between px-16 items-center gap-6  p-2 border-b border-gray-400  bg-gray-950'>
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900">Your Brain</h1>
-                  <p className="text-black-500 mt-1 text-sm">Organize and discover your knowledge</p>
+                  <h1 className="text-3xl font-bold text-gray-100 ">Your Brain</h1>
+                  <p className="text-gray-300 mt-1 text-sm">Organize and discover your knowledge</p>
                 </div>
             <div className='flex flex-wrap-reverse gap-4 md:gap-10'>
                   <SearchBox setSearchValue={setSearchData} />
@@ -60,7 +60,7 @@ export function Dashboard() {
             </div>
           </div>
           {/* <Button  size="lg" variant="secondary" text="Add Content"/> */}
-          <div className='sm:w-48 md:w-96'>
+          <div className='sm:w-48 mx-14 md:w-96 '>
             {data?.content?.map((item:ContentItem)=>{
               const {_id, type , link, title,description,image}:CardProps = item;
               if(_id === searchData)
@@ -82,7 +82,7 @@ export function Dashboard() {
           <h1 className="text-2xl font-semibold">No Data Found!</h1>
         </div>
       )}
-          <div   className={`grid gap-10 mt-7 
+          <div   className={`grid gap-10 pt-7 px-14 
     ${popmsg ? 'grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}
   `}>
 

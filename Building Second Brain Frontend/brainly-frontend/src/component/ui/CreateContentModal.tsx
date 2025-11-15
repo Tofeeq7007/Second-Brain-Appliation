@@ -102,7 +102,7 @@ export function CreateContentModal() {
           >
             <div 
               ref={ref} 
-              className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-hidden border border-gray-100 animate-in fade-in zoom-in-95 duration-300"
+              className="bg-gray-100 rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-hidden border border-gray-100 animate-in fade-in zoom-in-95 duration-300"
             >
               <div className="bg-gradient-to-r from-purple-600 to-purple-700 px-8 py-6 flex justify-between items-center">
                 <div>
