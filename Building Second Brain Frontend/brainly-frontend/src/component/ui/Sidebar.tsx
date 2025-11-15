@@ -4,7 +4,7 @@ import { SidebarItem } from "./SidebarItem";
 import { useDispatch, useSelector } from "react-redux";
 import { revert } from "../../store/features/pop_up";
 import type { POP_UP_Button } from "../../store/store";
-import { ChevronLeft, ChevronRight, Link, LogOut, Youtube, YoutubeIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, Link, LogOut, YoutubeIcon } from "lucide-react";
 import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 

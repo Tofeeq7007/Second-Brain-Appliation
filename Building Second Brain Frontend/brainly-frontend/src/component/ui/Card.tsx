@@ -1,10 +1,9 @@
 import { CrossIcon } from "../../icons/CrossIcon";
 import { ShareIcon } from "../../icons/ShareIcon";
-import { TwitterIcon } from "../../icons/TwitterIcon";
 import '../../App.css'
 import { PopUp } from "../Popup";
 import { useEffect, useState } from "react";
-import { Link, TwitchIcon, Twitter, Youtube } from 'lucide-react';
+import { Link, Twitter, Youtube } from 'lucide-react';
 export interface CardProps{
     _id:string,
     title:string,
