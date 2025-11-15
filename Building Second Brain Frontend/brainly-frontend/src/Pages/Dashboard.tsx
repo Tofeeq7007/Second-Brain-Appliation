@@ -60,7 +60,7 @@ export function Dashboard() {
             </div>
           </div>
           {/* <Button  size="lg" variant="secondary" text="Add Content"/> */}
-          <div className='sm:w-48 mx-14 md:w-96 '>
+          <div className='sm:w-48  px-6 min-[430px]:mx-14 md:w-96 '>
             {data?.content?.map((item:ContentItem)=>{
               const {_id, type , link, title,description,image}:CardProps = item;
               if(_id === searchData)
@@ -82,7 +82,7 @@ export function Dashboard() {
           <h1 className="text-2xl font-semibold">No Data Found!</h1>
         </div>
       )}
-          <div   className={`grid gap-10 pt-7 px-14 
+          <div   className={`grid gap-10 pt-7 min-[430px]:px-14 px-6
     ${popmsg ? 'grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}
   `}>
 
@@ -124,5 +124,4 @@ export function Dashboard() {
 }
 
 export default Dashboard
-
 
