@@ -141,9 +141,6 @@ export function Signin(){
         <div className="min-h-screen w-ful bg-gray-950 flex flex-col justify-center items-center p-4">
             <div className="mb-12 text-center">
                 <div className="mb-4 flex justify-center">
-                    <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-                        <span className="text-white font-bold text-xl">B</span>
-                    </div>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">Welcome Back</h1>
                 <p className="text-purple-200 text-lg">Sign in to your Brainly account</p>
